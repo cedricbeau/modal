@@ -1,0 +1,60 @@
+:root {
+  --modal-inner-width: 95%;
+  --modal-inner-max-width: 800px;
+  --modal-inner-border-radius: .35rem;
+  --modal-inner-box-shadow: 0 0 20px rgba(black, .15);
+  --modal-border: 1px solid #e5e5e5;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.modal__inner {
+  width: var(--modal-inner-width);
+  max-width: var(--modal-inner-max-width);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: var(--modal-inner-border-radius);
+  box-shadow: var(--modal-inner-box-shadow);
+}
+.modal__header, .modal__body, .modal__footer {
+  padding: 1rem;
+}
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--modal-border);
+}
+.modal__title {
+  margin: 0 1em 0 0;
+}
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  border-top: var(--modal-border);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+button {
+  cursor: pointer;
+}
